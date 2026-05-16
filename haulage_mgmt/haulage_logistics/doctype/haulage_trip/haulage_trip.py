@@ -125,9 +125,9 @@ class HaulageTrip(Document):
         if self.trip_status != "Completed":
             return
         events = [e.event_type for e in (self.get("trip_events") or []) if e.event_type]
-        if events and events[-1] not in ("Arrival", "Return"):
+        if events and events[-1] not in ("Arrival",):
             frappe.throw(
-                _("Trip is completed but the last logged event is not Arrival or Return. Please ensure the trip has an 'Arrival' or 'Return' event before marking it 'Completed'."),
+                _("Trip is completed but the last logged event is not Arrival. Please ensure the trip has an 'Arrival' event before marking it 'Completed'."),
                 title=_("Trip Inconsistency"),
             )
 

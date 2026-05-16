@@ -3,7 +3,7 @@
  "creation": "2026-05-13 00:00:00.000000",
  "doctype": "DocType",
  "engine": "InnoDB",
- "field_order": ["default_freight_item", "column_break_acc", "trip_expense_credit_account"],
+  "field_order": ["default_freight_item", "column_break_acc", "trip_expense_credit_account", "section_break_cache", "cache_ttl_seconds"],
  "fields": [
   {
    "fieldname": "default_freight_item",
@@ -15,13 +15,25 @@
    "fieldname": "column_break_acc",
    "fieldtype": "Column Break"
   },
-  {
-   "fieldname": "trip_expense_credit_account",
-   "fieldtype": "Link",
-   "label": "Trip Expense Credit Account (Journal Entry)",
-   "options": "Account",
-   "description": "Total trip expenses are credited to this account (e.g. cash or clearing). Each expense line debits the expense type account."
-  }
+   {
+    "fieldname": "trip_expense_credit_account",
+    "fieldtype": "Link",
+    "label": "Trip Expense Credit Account (Journal Entry)",
+    "options": "Account",
+    "description": "Total trip expenses are credited to this account (e.g. cash or clearing). Each expense line debits the expense type account."
+   },
+   {
+    "fieldname": "section_break_cache",
+    "fieldtype": "Section Break",
+    "label": "Performance"
+   },
+   {
+    "fieldname": "cache_ttl_seconds",
+    "fieldtype": "Int",
+    "label": "Financial Summary Cache TTL (seconds)",
+    "description": "How long to cache trip financial summaries. Default: 300 (5 minutes). Set to 0 to disable caching.",
+    "default": "300"
+   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,

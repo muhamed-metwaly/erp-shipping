@@ -15,8 +15,16 @@ from frappe.utils import flt
 
 logger = logging.getLogger(__name__)
 
-# Cache settings
-CACHE_TTL = 300  # 5 minutes
+# Cache settings - configurable via Haulage Logistics Settings
+def get_cache_ttl() -> int:
+    """Get cache TTL from settings, fallback to default 300 seconds."""
+    try:
+        ttl = frappe.db.get_single_value("Haulage Logistics Settings", "cache_ttl_seconds")
+        if ttl and ttl > 0:
+            return int(ttl)
+    except Exception:
+        pass
+    return 300  # Default: 5 minutes
 
 
 def _get_cache_key(trip_name: str) -> str:
@@ -164,8 +172,9 @@ def get_trip_financial_summary(trip_name: str, use_cache: bool = True) -> Dict[s
     # Store in cache
     if use_cache:
         cache_key = _get_cache_key(trip_name)
-        frappe.cache().set_value(cache_key, summary, expires_in_sec=CACHE_TTL)
-        logger.debug(f"Cache stored for trip {trip_name} with TTL={CACHE_TTL}s")
+        ttl = get_cache_ttl()
+        frappe.cache().set_value(cache_key, summary, expires_in_sec=ttl)
+        logger.debug(f"Cache stored for trip {trip_name} with TTL={ttl}s")
     
     logger.debug(f"Trip {trip_name} financial summary: revenue={total_revenue}, expenses={total_expenses}, custody={total_custody}, net={net_income}")
     

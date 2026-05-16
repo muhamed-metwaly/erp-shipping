@@ -1,0 +1,23 @@
+[project]
+name = "haulage_mgmt"
+version = "0.1.30"
+description = "Fleet haulage: master data, shipping requests, trips, trip accounting, custody, and ERPNext billing."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "frappe>=15.0.0",
+    "erpnext>=15.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.frappe]
+app_name = "haulage_mgmt"
+app_title = "Haulage Management"
+app_publisher = "Haulage Mgmt"
+app_description = "Fleet haulage: master data, shipping requests, trips, trip accounting, custody, and ERPNext billing."
+app_license = "MIT"
+app_version = "0.1.30"
+required_apps = ["erpnext"]

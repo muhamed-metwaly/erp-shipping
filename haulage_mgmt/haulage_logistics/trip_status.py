@@ -28,6 +28,12 @@ TRIP_STATUS_ACTIONS: Dict[str, Dict[str, Any]] = {
         "from": ("Started",),
         "to": "Paused",
     },
+    "resume": {
+        "label": _("Resume trip"),
+        "event": "Resume",
+        "from": ("Paused",),
+        "to": "Started",
+    },
     "arrive": {
         "label": _("Trip arrival"),
         "event": "Arrival",

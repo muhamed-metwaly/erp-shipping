@@ -57,9 +57,10 @@ frappe.listview_settings["Haulage Trip"] = {
 							});
 							list_view.refresh();
 						}
-					}
-				});
-			);
+			}
+		});
+		},
+	);
 		// Add button for batch journal entries
 		list_view.page.add_menu_item(
 			__("Batch Journal Entries"),
@@ -100,8 +101,9 @@ frappe.listview_settings["Haulage Trip"] = {
 							});
 							list_view.refresh();
 						}
-					}
-				});
-			);
+			}
+		});
+		},
+	);
 	},
 };
