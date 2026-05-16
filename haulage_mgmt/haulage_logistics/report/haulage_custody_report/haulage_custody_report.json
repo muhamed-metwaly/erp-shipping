@@ -1,0 +1,22 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2026-05-15 00:00:00",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "is_standard": "Yes",
+ "letter_head": 0,
+ "modified": "2026-05-15 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Haulage Logistics",
+ "name": "Haulage Custody Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Haulage Trip",
+ "report_name": "Haulage Custody Report",
+ "report_type": "Script Report",
+ "roles": [{"role": "System Manager"}, {"role": "Fleet Manager"}],
+ "timeout": 0
+}

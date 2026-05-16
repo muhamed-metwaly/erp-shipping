@@ -1,0 +1,152 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"2WfaztnMbm\",\"type\":\"header\",\"data\":{\"text\":\"Master data\",\"col\":12}},{\"id\":\"Rk1bKnEMrm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Truck\",\"col\":3}},{\"id\":\"Sy2-rn4zrX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Driver\",\"col\":3}},{\"id\":\"BJh-T4VGSm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Haulage Expense Type\",\"col\":3}},{\"id\":\"HkZbTN4GHQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Haulage Custody Type\",\"col\":3}},{\"id\":\"abcdef0001\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"abcdef0002\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Haulage Logistics Settings\",\"col\":3}},{\"id\":\"pWfaztnMb2\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"3XfaztnMb3\",\"type\":\"header\",\"data\":{\"text\":\"Shipping requests\",\"col\":12}},{\"id\":\"Qk1bKnEMr3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shipping Request\",\"col\":3}},{\"id\":\"SkZbTN4GS3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Shipping Request\",\"col\":3}},{\"id\":\"pWfaztnMb4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"4XfaztnMb4\",\"type\":\"header\",\"data\":{\"text\":\"Trip operations\",\"col\":12}},{\"id\":\"Rk1bKnEMr4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"All Trips\",\"col\":3}},{\"id\":\"Qk1bKnEMr5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Haulage Trip\",\"col\":3}},{\"id\":\"pWfaztnMb5\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"5XfaztnMb5\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"Rk1bKnEMr6\",\"type\":\"link\",\"data\":{\"link_name\":\"Haulage Driver Report\",\"col\":3}},{\"id\":\"Sk1bKnEMr6\",\"type\":\"link\",\"data\":{\"link_name\":\"Haulage Trip Report\",\"col\":3}},{\"id\":\"Tk1bKnEMr6\",\"type\":\"link\",\"data\":{\"link_name\":\"Haulage Truck Report\",\"col\":3}},{\"id\":\"Uk1bKnEMr6\",\"type\":\"link\",\"data\":{\"link_name\":\"Haulage Custody Report\",\"col\":3}}]",
+ "creation": "2026-05-16 00:00:00",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "truck",
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "Haulage Logistics",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Haulage Driver Report",
+   "link_count": 0,
+   "link_to": "Haulage Driver Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Haulage Trip Report",
+   "link_count": 0,
+   "link_to": "Haulage Trip Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Haulage Truck Report",
+   "link_count": 0,
+   "link_to": "Haulage Truck Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Haulage Custody Report",
+   "link_count": 0,
+   "link_to": "Haulage Custody Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-05-16 00:00:00",
+ "module": "Haulage Logistics",
+ "name": "Haulage Logistics",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Fleet Manager"
+  }
+ ],
+ "sequence_id": 30.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "{} Active",
+   "label": "Truck",
+   "link_to": "Truck",
+   "stats_filter": "{\"truck_status\":\"Available\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "{} Active",
+   "label": "Driver",
+   "link_to": "Driver",
+   "stats_filter": "{\"driver_status\":\"Active\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Haulage Expense Type",
+   "link_to": "Haulage Expense Type",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Haulage Custody Type",
+   "link_to": "Haulage Custody Type",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Customer",
+   "link_to": "Customer",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Haulage Logistics Settings",
+   "link_to": "Haulage Logistics Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "format": "{} Open",
+   "label": "Shipping Request",
+   "link_to": "Shipping Request",
+   "stats_filter": "{\"request_status\":\"New\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "New",
+   "label": "New Shipping Request",
+   "link_to": "Shipping Request",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "",
+   "label": "All Trips",
+   "link_to": "trip-operations",
+   "type": "Page"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "New",
+   "label": "New Haulage Trip",
+   "link_to": "Haulage Trip",
+   "type": "DocType"
+  }
+ ],
+ "title": "Haulage Logistics"
+}

@@ -1,0 +1,1 @@
+# Haulage app has no extra pip deps; frappe/erpnext come from bench

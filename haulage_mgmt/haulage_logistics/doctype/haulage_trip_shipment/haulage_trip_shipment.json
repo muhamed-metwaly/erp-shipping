@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "creation": "2026-05-13 00:00:00.000000",
+  "doctype": "DocType",
+  "istable": 1,
+"field_order": [
+   "haulage_trip",
+   "shipping_request",
+   "pickup_location",
+   "delivery_location"
+  ],
+  "fields": [
+    {
+     "fieldname": "haulage_trip",
+     "fieldtype": "Link",
+     "label": "Haulage Trip",
+     "options": "Haulage Trip",
+     "hidden": 1
+    },
+   {
+    "fieldname": "shipping_request",
+    "fieldtype": "Link",
+    "in_list_view": 1,
+    "label": "Shipping Request",
+    "options": "Shipping Request",
+    "reqd": 1
+   },
+   {
+    "fieldname": "pickup_location",
+    "fieldtype": "Data",
+    "in_list_view": 1,
+     "label": "Pickup Location",
+    "description": "Taken from the linked Shipping Request.",
+    "read_only": 1,
+    "fetch_from": "shipping_request.pickup_location"
+   },
+   {
+    "fieldname": "delivery_location",
+    "fieldtype": "Data",
+    "in_list_view": 1,
+     "label": "Delivery Location",
+    "description": "Taken from the linked Shipping Request.",
+    "read_only": 1,
+    "fetch_from": "shipping_request.delivery_location"
+   }
+   ],
+  "links": [],
+ "modified": "2026-05-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Haulage Logistics",
+ "name": "Haulage Trip Shipment",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

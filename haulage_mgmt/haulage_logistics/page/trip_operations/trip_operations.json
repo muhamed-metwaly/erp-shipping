@@ -1,0 +1,16 @@
+{
+ "content": null,
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "module": "Haulage Logistics",
+ "name": "trip-operations",
+ "page_name": "trip-operations",
+ "roles": [
+  {"role": "System Manager"},
+  {"role": "Fleet Manager"}
+ ],
+ "standard": "Yes",
+ "system_page": 0,
+ "title": "All Trips"
+}

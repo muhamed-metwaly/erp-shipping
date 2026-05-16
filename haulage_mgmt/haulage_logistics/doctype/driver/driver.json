@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:full_name",
+ "creation": "2026-05-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "full_name",
+  "image",
+  "national_id",
+  "phone",
+  "address",
+  "section_break_license",
+  "license_number",
+  "license_expiry",
+  "hire_date",
+  "column_break_driver",
+  "driver_status",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Full Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "national_id",
+   "fieldtype": "Data",
+   "label": "National ID"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "section_break_license",
+   "fieldtype": "Section Break",
+   "label": "License"
+  },
+  {
+   "fieldname": "license_number",
+   "fieldtype": "Data",
+   "label": "Driving License No."
+  },
+  {
+   "fieldname": "license_expiry",
+   "fieldtype": "Date",
+   "label": "License Expiry"
+  },
+  {
+   "fieldname": "hire_date",
+   "fieldtype": "Date",
+   "label": "Hire Date"
+  },
+  {
+   "fieldname": "column_break_driver",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Driver Status",
+   "options": "Active\nSuspended\nOn Leave",
+   "default": "Active"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Haulage Logistics",
+ "name": "Driver",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name",
+ "track_changes": 1
+}

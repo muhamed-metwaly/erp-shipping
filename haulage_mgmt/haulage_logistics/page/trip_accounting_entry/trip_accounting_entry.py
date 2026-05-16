@@ -1,0 +1,1 @@
+"""Legacy redirect page — trip accounting entry now lives on the Haulage Trip form."""

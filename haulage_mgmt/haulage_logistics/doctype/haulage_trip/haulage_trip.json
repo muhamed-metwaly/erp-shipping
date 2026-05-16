@@ -1,0 +1,191 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-05-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+   "naming_series",
+   "trip_status",
+   "column_break_head",
+   "company",
+   "truck",
+   "driver",
+   "departure_date",
+   "section_break_shipments",
+   "shipments",
+   "section_break_trip_accounting",
+   "trip_revenue_summary",
+   "section_break_expenses",
+   "trip_expenses",
+   "section_break_custodies",
+   "trip_custodies",
+   "section_break_accounting",
+   "trip_journal_entry",
+   "section_break_events",
+   "trip_events"
+  ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TRIP-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "trip_status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Trip Status",
+   "options": "Preparing\nStarted\nPaused\nCompleted\nCancelled",
+   "default": "Preparing",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_head",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "truck",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Truck",
+   "options": "Truck",
+   "reqd": 1
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Driver",
+   "options": "Driver",
+   "reqd": 1
+  },
+   {
+    "fieldname": "departure_date",
+    "fieldtype": "Datetime",
+    "label": "Departure Date & Time"
+   },
+  {
+   "fieldname": "section_break_shipments",
+   "fieldtype": "Section Break",
+   "label": "Shipments"
+  },
+  {
+   "fieldname": "shipments",
+   "fieldtype": "Table",
+   "label": "Shipping Requests on Trip",
+   "description": "Pickup and delivery on each line are loaded from the linked Shipping Request (edit them on the request).",
+   "options": "Haulage Trip Shipment"
+  },
+  {
+   "fieldname": "section_break_trip_accounting",
+   "fieldtype": "Section Break",
+   "label": "Trip revenue (shipments)"
+  },
+  {
+   "fieldname": "trip_revenue_summary",
+   "fieldtype": "HTML",
+   "label": "Revenue summary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_expenses",
+   "fieldtype": "Section Break",
+   "label": "Expense allocation (per trip)"
+  },
+  {
+   "fieldname": "trip_expenses",
+   "fieldtype": "Table",
+   "label": "Expense Allocation",
+   "options": "Haulage Trip Expense"
+  },
+  {
+   "fieldname": "section_break_custodies",
+   "fieldtype": "Section Break",
+   "label": "Custody allocation (per trip)"
+  },
+  {
+   "fieldname": "trip_custodies",
+   "fieldtype": "Table",
+   "label": "Custody Allocation",
+   "options": "Haulage Trip Custody"
+  },
+  {
+   "fieldname": "section_break_accounting",
+   "fieldtype": "Section Break",
+   "label": "Accounting"
+  },
+  {
+   "fieldname": "trip_journal_entry",
+   "fieldtype": "Link",
+   "label": "Expense Journal Entry",
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_events",
+   "fieldtype": "Section Break",
+   "label": "Trip execution (start / pause / arrival / return)"
+  },
+  {
+   "fieldname": "trip_events",
+   "fieldtype": "Table",
+   "label": "Trip Events",
+   "options": "Haulage Trip Event"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Haulage Logistics",
+ "name": "Haulage Trip",
+ "naming_rule": "By \"Naming Series\" field",
+ "default_print_format": "Haulage Trip Operations",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

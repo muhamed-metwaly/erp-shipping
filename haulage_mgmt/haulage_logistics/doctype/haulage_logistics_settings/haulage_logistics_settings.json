@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "creation": "2026-05-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["default_freight_item", "column_break_acc", "trip_expense_credit_account"],
+ "fields": [
+  {
+   "fieldname": "default_freight_item",
+   "fieldtype": "Link",
+   "label": "Default Freight Item (Sales Invoice)",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_acc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "trip_expense_credit_account",
+   "fieldtype": "Link",
+   "label": "Trip Expense Credit Account (Journal Entry)",
+   "options": "Account",
+   "description": "Total trip expenses are credited to this account (e.g. cash or clearing). Each expense line debits the expense type account."
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-05-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Haulage Logistics",
+ "name": "Haulage Logistics Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 0,
+   "role": "Fleet Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

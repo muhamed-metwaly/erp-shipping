@@ -1,0 +1,145 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:truck_name",
+ "creation": "2026-05-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "truck_name",
+  "image",
+  "license_plate",
+  "truck_type",
+  "truck_model",
+  "load_capacity",
+  "column_break_status",
+  "truck_status",
+  "license_start_date",
+  "license_end_date",
+  "section_break_insurance",
+  "insurance_company",
+  "insurance_end_date",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "truck_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Truck Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "license_plate",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "License Plate"
+  },
+  {
+   "fieldname": "truck_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Truck Type"
+  },
+  {
+   "fieldname": "truck_model",
+   "fieldtype": "Data",
+   "label": "Truck Model"
+  },
+  {
+   "fieldname": "load_capacity",
+   "fieldtype": "Float",
+   "label": "Load Capacity (MT)"
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "truck_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Truck Status",
+   "options": "Available\nReserved for Trip\nMaintenance\nStopped",
+   "default": "Available"
+  },
+  {
+   "fieldname": "license_start_date",
+   "fieldtype": "Date",
+   "label": "License Start Date"
+  },
+  {
+   "fieldname": "license_end_date",
+   "fieldtype": "Date",
+   "label": "License End Date"
+  },
+  {
+   "fieldname": "section_break_insurance",
+   "fieldtype": "Section Break",
+   "label": "Insurance"
+  },
+  {
+   "fieldname": "insurance_company",
+   "fieldtype": "Data",
+   "label": "Insurance Company"
+  },
+  {
+   "fieldname": "insurance_end_date",
+   "fieldtype": "Date",
+   "label": "Insurance End Date"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "General Remarks"
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Haulage Logistics",
+ "name": "Truck",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "truck_name",
+ "track_changes": 1
+}

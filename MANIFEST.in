@@ -1,0 +1,10 @@
+recursive-include haulage_mgmt *.json
+recursive-include haulage_mgmt *.js
+recursive-include haulage_mgmt *.py
+recursive-include haulage_mgmt *.csv
+recursive-include haulage_mgmt *.html
+recursive-include haulage_mgmt *.css
+recursive-include haulage_mgmt *.svg
+recursive-include haulage_mgmt/public *
+include license.txt
+include requirements.txt

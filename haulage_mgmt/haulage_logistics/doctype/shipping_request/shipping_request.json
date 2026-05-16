@@ -1,0 +1,178 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-05-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "company",
+  "customer",
+  "request_date",
+  "pickup_location",
+  "delivery_location",
+  "cargo_type",
+  "cargo_description",
+  "weight_or_qty",
+  "units_count",
+  "items",
+  "agreed_price",
+  "required_loading_date",
+  "expected_delivery_date",
+  "request_status",
+  "remarks",
+  "delivery_note"
+ ],
+ "fields": [
+   {
+    "fieldname": "naming_series",
+    "fieldtype": "Select",
+    "label": "Series",
+    "options": "SR-.#####",
+    "reqd": 1
+   },
+   {
+    "fieldname": "company",
+    "fieldtype": "Link",
+    "in_list_view": 1,
+    "in_standard_filter": 1,
+    "label": "Company",
+    "options": "Company",
+    "reqd": 1,
+    "default": ""
+   },
+   {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "default": "Today",
+   "in_list_view": 1,
+   "label": "Request Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pickup_location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+    "label": "Pickup Location",
+    "reqd": 1
+   },
+   {
+    "fieldname": "delivery_location",
+    "fieldtype": "Data",
+    "in_list_view": 1,
+    "label": "Delivery Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cargo_type",
+   "fieldtype": "Data",
+   "label": "Cargo Type"
+  },
+  {
+   "fieldname": "cargo_description",
+   "fieldtype": "Text",
+   "label": "Cargo Description"
+  },
+  {
+   "fieldname": "weight_or_qty",
+   "fieldtype": "Float",
+   "label": "Weight or Quantity"
+  },
+  {
+   "fieldname": "units_count",
+   "fieldtype": "Int",
+   "label": "Units Count"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items to Ship",
+   "options": "Shipping Request Item"
+  },
+  {
+   "fieldname": "agreed_price",
+   "fieldtype": "Currency",
+   "label": "Agreed Price"
+  },
+  {
+   "fieldname": "required_loading_date",
+   "fieldtype": "Date",
+   "label": "Required Loading Date"
+  },
+  {
+   "fieldname": "expected_delivery_date",
+   "fieldtype": "Date",
+   "label": "Expected Delivery Date"
+  },
+  {
+   "fieldname": "request_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Request Status",
+   "options": "New\nGoods Prepared\nOut for Delivery\nCancelled\nDelivered",
+   "default": "New",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Additional Remarks"
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Link",
+   "label": "Delivery Note",
+   "options": "Delivery Note",
+   "read_only": 1,
+   "hidden": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Haulage Logistics",
+ "name": "Shipping Request",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
