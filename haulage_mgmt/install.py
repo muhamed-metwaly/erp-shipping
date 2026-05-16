@@ -1,6 +1,3 @@
-import json
-from pathlib import Path
-
 import frappe
 
 
@@ -18,6 +15,17 @@ def before_migrate():
             frappe.db.sql("DELETE FROM `tabShipment Preparation`")
         except Exception:
             frappe.log_error(frappe.get_traceback(), "haulage_mgmt: clear Shipment Preparation")
+    if frappe.db.exists("Role", "Fleet Manager"):
+        return
+    doc = frappe.new_doc("Role")
+    doc.role_name = "Fleet Manager"
+    doc.desk_access = 1
+    doc.insert(ignore_permissions=True)
+
+
+def after_install():
+    """Run once on first install: create custom fields and ensure Fleet Manager role."""
+    _create_custom_fields()
     if frappe.db.exists("Role", "Fleet Manager"):
         return
     doc = frappe.new_doc("Role")
@@ -146,33 +154,6 @@ def _migrate_truck_busy_to_reserved():
     )
 
 
-def _sync_haulage_pages_from_json():
-    """Ensure trip-operations and legacy redirect pages exist in the database."""
-    if not frappe.db.exists("DocType", "Page"):
-        return
-    base = Path(frappe.get_app_path("haulage_mgmt")) / "haulage_logistics" / "page"
-    if not base.is_dir():
-        return
-    try:
-        from frappe.modules.import_file import import_file_by_path
-    except ImportError:
-        frappe.log_error("haulage_mgmt: cannot import import_file_by_path", "page sync")
-        return
-    for page_dir in sorted(base.iterdir()):
-        if not page_dir.is_dir():
-            continue
-        json_path = page_dir / f"{page_dir.name}.json"
-        if not json_path.is_file():
-            continue
-        try:
-            import_file_by_path(str(json_path), force=True, ignore_version=True)
-        except Exception:
-            frappe.log_error(
-                frappe.get_traceback(),
-                f"haulage_mgmt: sync page {page_dir.name}",
-            )
-
-
 def _purge_legacy_haulage_print_formats():
     """Remove replaced trip print formats (merged into Operations + Summary)."""
     if not frappe.db.exists("DocType", "Print Format"):
@@ -205,59 +186,6 @@ def _purge_legacy_haulage_reports():
             frappe.delete_doc("Report", report, force=True, ignore_permissions=True)
         except Exception:
             frappe.log_error(frappe.get_traceback(), f"haulage_mgmt: purge legacy report {report}")
-
-
-def _sync_haulage_workspace_from_json():
-    """Replace workspace content, shortcuts, and links from the app bundle.
-
-    Avoids duplicate or stale shortcut rows on sites that imported an older workspace.
-    """
-    try:
-        _do_sync_haulage_workspace_from_json()
-    except Exception:
-        frappe.log_error(frappe.get_traceback(), "haulage_mgmt: workspace sync failed")
-
-
-def _do_sync_haulage_workspace_from_json():
-    ws_name = "Haulage Logistics"
-    if not frappe.db.exists("Workspace", ws_name):
-        return
-    path = Path(frappe.get_app_path("haulage_mgmt")) / "haulage_logistics" / "workspace" / "haulage_logistics" / "haulage_logistics.json"
-    if not path.exists():
-        return
-    with path.open(encoding="utf-8") as f:
-        data = json.load(f)
-    doc = frappe.get_doc("Workspace", ws_name)
-    doc.content = data.get("content") or "[]"
-    doc.title = data.get("title") or ws_name
-    doc.label = data.get("label") or ws_name
-    for row in list(doc.shortcuts):
-        doc.remove(row)
-    for row in list(doc.links):
-        doc.remove(row)
-    for row in data.get("shortcuts") or []:
-        doc.append("shortcuts", row)
-    for row in data.get("links") or []:
-        doc.append("links", row)
-    doc.parent_page = ""
-    doc.save(ignore_permissions=True)
-
-
-def _fix_workspace_sidebar():
-    """Keep workspace title in sync with name (desk routes slug the name) and detach from any parent."""
-    ws = "Haulage Logistics"
-    if not frappe.db.exists("Workspace", ws):
-        return
-    row = frappe.db.get_value("Workspace", ws, ["title", "parent_page"], as_dict=True)
-    if not row:
-        return
-    updates = {}
-    if row.get("title") != ws:
-        updates["title"] = ws
-    if row.get("parent_page"):
-        updates["parent_page"] = ""
-    if updates:
-        frappe.db.set_value("Workspace", ws, updates)
 
 
 def before_uninstall():
@@ -355,7 +283,7 @@ def _uninstall_remove_haulage_todos():
     try:
         frappe.db.sql(
             "DELETE FROM `tabToDo` WHERE description LIKE %s",
-            ("[Haulage%",),
+            ("Haulage%",),
         )
     except Exception:
         frappe.log_error(frappe.get_traceback(), "haulage_mgmt uninstall: ToDo cleanup")

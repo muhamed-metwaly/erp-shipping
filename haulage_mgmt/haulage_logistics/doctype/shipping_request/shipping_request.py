@@ -108,13 +108,13 @@ class ShippingRequest(Document):
     def _handle_cancelled_status(self):
         if self.delivery_note and frappe.db.exists("Delivery Note", self.delivery_note):
             dn = frappe.get_doc("Delivery Note", self.delivery_note)
-            if dn.docstatus == 0: # If draft, can cancel
+            if dn.docstatus == 0: # If draft, delete it (cancel is only for submitted docs)
                 try:
-                    dn.cancel()
-                    frappe.msgprint(_("Delivery Note {0} cancelled.").format(dn.name), indicator="red")
+                    dn.delete()
+                    frappe.msgprint(_("Delivery Note {0} deleted.").format(dn.name), indicator="red")
                 except Exception as e:
-                    frappe.log_error(frappe.get_traceback(), _("Failed to cancel Delivery Note {0} for Shipping Request {1}").format(dn.name, self.name))
-                    frappe.throw(_("Failed to cancel Delivery Note: {0}").format(e))
+                    frappe.log_error(frappe.get_traceback(), _("Failed to delete Delivery Note {0} for Shipping Request {1}").format(dn.name, self.name))
+                    frappe.throw(_("Failed to delete Delivery Note: {0}").format(e))
             elif dn.docstatus == 1:
                 frappe.throw(
                     _("Linked Delivery Note {0} is already submitted. Please cancel it manually before cancelling this request.").format(dn.name),

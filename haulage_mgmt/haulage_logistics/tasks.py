@@ -44,7 +44,7 @@ def send_fleet_expiry_reminders():
         return
 
     body = "\n".join(lines[:50])
-    prefix = f"[Haulage {today()}] "
+    prefix = f"Haulage {today()}: "
     users = frappe.get_all(
         "Has Role",
         filters={"role": ("in", ["Fleet Manager", "System Manager"]), "parenttype": "User"},

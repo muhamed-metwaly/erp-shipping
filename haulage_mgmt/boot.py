@@ -9,6 +9,7 @@ def check_haulage_app_permission():
         return False
     if "System Manager" in frappe.get_roles():
         return True
-    if frappe.db.exists("Workspace", "Haulage Logistics"):
+    ws_exists = frappe.db.get_cached_value("Workspace", "Haulage Logistics", "name")
+    if ws_exists:
         return frappe.has_permission("Workspace", "read", doc="Haulage Logistics")
     return True

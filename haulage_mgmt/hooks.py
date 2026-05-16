@@ -31,7 +31,7 @@ add_to_apps_screen = [
     }
 ]
 
-after_install = "haulage_mgmt.install.after_migrate"
+after_install = "haulage_mgmt.install.after_install"
 before_migrate = "haulage_mgmt.install.before_migrate"
 after_migrate = "haulage_mgmt.install.after_migrate"
 before_uninstall = "haulage_mgmt.install.before_uninstall"
